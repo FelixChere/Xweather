@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/felixchen/Desktop/UW Campus map.png\")",
+      "Bash(xargs ls *)",
+      "Bash(awk '{print $5, $9}')"
+    ]
+  }
+}

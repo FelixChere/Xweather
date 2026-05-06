@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0b0e14;
+  color: #f3f5f9;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.font-mono {
+  font-feature-settings: 'tnum';
+}
+
+/* Global focus indicator — meets WCAG 2.2 SC 2.4.11 */
+:focus-visible {
+  outline: 2px solid #7cc8ff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(110, 226, 185, 0.18); }
+  50% { box-shadow: 0 0 0 6px rgba(110, 226, 185, 0.05); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.6); opacity: 0.35; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.live-dot {
+  animation: pulse-dot 2s infinite;
+}
+
+.marker-ripple {
+  position: relative;
+}
+.marker-ripple::before {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.18;
+  animation: ripple 2.5s infinite;
+}
+
+/* Respect user's motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .live-dot { animation: none; }
+  .marker-ripple::before { animation: none; }
+}
+
+.map-canvas {
+  background:
+    linear-gradient(180deg, rgba(11, 14, 20, 0) 0%, rgba(11, 14, 20, 0.55) 100%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 12px),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 12px),
+    linear-gradient(180deg, #1a2130 0%, #0f1420 100%);
+}
+
+.sidebar-active {
+  box-shadow: inset 2px 0 0 #ff8a4c;
+}
+
+.alert-btn-grad {
+  background: linear-gradient(180deg, #ff6b4c, #e8492a);
+  box-shadow: 0 6px 18px rgba(232, 73, 42, 0.25);
+}
+
+.brand-mark-grad {
+  background: linear-gradient(135deg, #ff8a4c 0%, #ff6b6b 100%);
+}
+
+.avatar-grad {
+  background: linear-gradient(135deg, #5b6df0, #8b5cf6);
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #ffb38a, #ff6b6b);
+}
+
+.main-bg {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(255, 138, 76, 0.04), transparent 70%),
+    #0b0e14;
+}
+
+.scroll-area::-webkit-scrollbar { width: 10px; height: 10px; }
+.scroll-area::-webkit-scrollbar-track { background: transparent; }
+.scroll-area::-webkit-scrollbar-thumb {
+  background: #232a39;
+  border-radius: 999px;
+  border: 2px solid #0b0e14;
+}
