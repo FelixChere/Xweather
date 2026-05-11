@@ -316,7 +316,7 @@ export default function TempCastPage() {
       </div>
 
       {/* Summary cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 xl:gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 xl:gap-6">
         <SummaryCard
           label="Campus Risk Level"
           value={riskLevel}
@@ -399,7 +399,7 @@ export default function TempCastPage() {
         <h2 className="m-0 mb-3 text-[11px] font-semibold uppercase tracking-[0.09em] text-ink-3">
           Per-Zone Breakdown
         </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 xl:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 xl:gap-6">
           {forecastZones.map(z => <ZoneCard key={z.id} zone={z} />)}
         </div>
       </div>

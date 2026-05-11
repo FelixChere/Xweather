@@ -90,7 +90,7 @@ export default function AlertDetailPanel({ onClose, setPage, onAcknowledge }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="alert-panel-title"
-        className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-[520px] flex flex-col overflow-hidden rounded-l-[16px] motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out ${entered && !leaving ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed top-0 right-0 bottom-0 z-50 w-full max-w-[90vw] md:max-w-[520px] flex flex-col overflow-hidden rounded-l-[16px] motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out ${entered && !leaving ? 'translate-x-0' : 'translate-x-full'}`}
         style={{ background: '#10141e', borderLeft: '1px solid rgba(255,255,255,0.08)' }}
       >
         {/* Header */}

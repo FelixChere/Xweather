@@ -125,7 +125,7 @@ export default function ReportsPage({ units = [], resolvedExceeded = new Set() }
 
           {/* Sensor readings */}
           <Section title="Sensor Readings at Time of Incident">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {sensors.map(s => {
                 const over  = s.temp > s.threshold
                 const color = s.temp >= 100 ? '#ff6b6b' : s.temp >= 95 ? '#ffb38a' : '#6ee2b9'
