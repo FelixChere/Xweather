@@ -54,7 +54,7 @@ export default function AlertBanner({ setPage }) {
             </span>
           </div>
           <div className="text-ink-1 text-[13px]">
-            2 nodes have measured above 95°F for more than 120 minutes. Departmental protocols have been triggered automatically.
+            2 nodes have measured above 88°F for more than 120 minutes. Departmental protocols have been triggered automatically.
           </div>
           <div className="text-ink-3 text-xs mt-1 flex gap-3.5">
             <span><strong className="text-ink-1 font-medium">Affected zones:</strong> Zone 4, Zone 9</span>
