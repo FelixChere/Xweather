@@ -11,12 +11,12 @@ const initialLog = [
 ]
 
 const typeColors = {
-  Medical:       { color: '#ff6b6b', bg: 'rgba(255,107,107,0.12)' },
-  Facilities:    { color: '#7cc8ff', bg: 'rgba(124,200,255,0.12)' },
-  Safety:        { color: '#ffb38a', bg: 'rgba(255,179,138,0.12)' },
-  Environmental: { color: '#6ee2b9', bg: 'rgba(110,226,185,0.12)' },
-  Utilities:     { color: '#8893a8', bg: 'rgba(136,147,168,0.12)' },
-  Support:       { color: '#7cc8ff', bg: 'rgba(124,200,255,0.12)' },
+  Medical:       { color: '#8893a8', bg: 'rgba(136,147,168,0.10)' },
+  Facilities:    { color: '#8893a8', bg: 'rgba(136,147,168,0.10)' },
+  Safety:        { color: '#8893a8', bg: 'rgba(136,147,168,0.10)' },
+  Environmental: { color: '#8893a8', bg: 'rgba(136,147,168,0.10)' },
+  Utilities:     { color: '#8893a8', bg: 'rgba(136,147,168,0.10)' },
+  Support:       { color: '#8893a8', bg: 'rgba(136,147,168,0.10)' },
 }
 
 const statusStyle = {
