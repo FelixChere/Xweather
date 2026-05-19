@@ -32,6 +32,31 @@ function PageFade({ pageKey, children }) {
   )
 }
 
+function MobileBlock() {
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, background: '#07080f',
+      display: 'flex', flexDirection: 'column', alignItems: 'center',
+      justifyContent: 'center', padding: '40px 32px', textAlign: 'center',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+      color: 'white', zIndex: 9999,
+    }}>
+      <div style={{ width: 48, height: 48, borderRadius: 12, background: 'linear-gradient(135deg,#ff8a4c,#e8492a)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24 }}>
+        <img src="/xweather-logo.png" alt="XWeather" style={{ width: 28, height: 28, objectFit: 'contain', mixBlendMode: 'multiply' }} />
+      </div>
+      <h1 style={{ fontSize: 20, fontWeight: 800, letterSpacing: '-0.02em', marginBottom: 12, color: 'white' }}>
+        XWeather Vigilant Lens
+      </h1>
+      <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, maxWidth: 280, margin: '0 0 32px' }}>
+        This emergency operations dashboard is designed for desktop and tablet. Please open it on a larger screen for the full experience.
+      </p>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: 'rgba(255,255,255,0.25)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+        <span>🖥</span> Best on desktop or tablet
+      </div>
+    </div>
+  )
+}
+
 export default function App() {
   const [navOpen, setNavOpen]       = useState(false)
   const [showOnboarding, setShowOnboarding] = useState(() => !localStorage.getItem('xw-onboarded'))
@@ -48,6 +73,8 @@ export default function App() {
     d.status === 'exceeded' && !resolvedExceeded.has(d.id)
   ).length
 
+  const isMobileDevice = typeof window !== 'undefined' && window.innerWidth < 640
+
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') setNavOpen(false) }
     document.addEventListener('keydown', onKey)
@@ -56,6 +83,7 @@ export default function App() {
 
   return (
     <>
+      {isMobileDevice && <MobileBlock />}
       {showOnboarding && (
         <SpotlightTour onDone={() => { setShowOnboarding(false); localStorage.setItem('xw-onboarded', '1') }} />
       )}
